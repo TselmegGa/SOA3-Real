@@ -3,7 +3,11 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Backlog {
+    private static final Logger logger = LogManager.getLogger(Backlog.class);
     private List<Item> items;
 
     public Backlog() {
@@ -20,7 +24,7 @@ public class Backlog {
             return true;
         }
         else{
-            System.out.println("An item must be in todoState");
+            logger.info("An item must be in todoState");
             return false;
         }
 
