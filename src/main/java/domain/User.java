@@ -18,7 +18,7 @@ public class User extends NotificationObserver {
     }
 
     public User(String name, Role role, int age, String email) {
-        name = name;
+        this.name = name;
         this.role = role;
         this.age = age;
         this.email = email;
