@@ -52,24 +52,6 @@ class NotificationBuilderTest {
 
     }
 
-//    @Test
-//    void setNotificationOnUser(){
-//        INotificationProvider mailProvider = new MailProvider("student@avans.nl");
-//        INotificationProvider discordProvider = new DiscordProvider("1fc93908a9403d61fbf587381dac002b");
-//
-//
-//
-//        Role role = new Role(ProjectRoles.DEVELOPER, SprintRoles.DEVELOPER);
-//        User mike = new User("Mike Smith",role,44,"Mike@yahoo.com");
-//        mike.setNotification(new NotificationBuilder()
-//                .addProvider(mailProvider)
-//                .addProvider(discordProvider)
-//                .build());
-//
-//        mike.
-//
-//
-//    }
 
     @AfterEach
     public void tearDown() {

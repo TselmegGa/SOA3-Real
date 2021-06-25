@@ -1,5 +1,5 @@
 import domain.*;
-import domain.forum.composit.Forum;
+import domain.forum.Forum;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

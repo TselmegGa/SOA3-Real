@@ -1,4 +1,4 @@
-package domain.forum.composit;
+package domain.forum;
 
 import domain.User;
 

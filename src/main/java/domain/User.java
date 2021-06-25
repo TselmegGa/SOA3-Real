@@ -66,7 +66,7 @@ public class User implements NotificationObserver {
         if(this.notification!=null){
             this.notification.send(message.getSubject(), message.getMessage());
         }else {
-            logger.info("onNotification: notification object is null,  Message { Subject: " +  message.getSubject()+ ", Message: " + message.getMessage()+ "} User: " + this.toString());
+            System.out.println("onNotification: notification object is null,  Message { Subject: " +  message.getSubject()+ ", Message: " + message.getMessage()+ "} User: " + this.toString());
         }
     }
 

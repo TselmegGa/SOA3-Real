@@ -2,7 +2,7 @@ package domain;
 
 import domain.enums.ProjectRoles;
 import domain.enums.SprintRoles;
-import domain.forum.composit.Forum;
+import domain.forum.Forum;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

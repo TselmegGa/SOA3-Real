@@ -2,8 +2,8 @@ package domain;
 
 import domain.enums.ProjectRoles;
 import domain.enums.SprintRoles;
-import domain.forum.composit.Reaction;
-import domain.forum.composit.Topic;
+import domain.forum.Reaction;
+import domain.forum.Topic;
 import domain.notification.builder.NotificationBuilder;
 import domain.notification.builder.providers.MailProvider;
 import domain.notification.observer.Message;

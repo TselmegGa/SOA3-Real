@@ -1,6 +1,7 @@
-package domain.forum.composit;
+package domain.forum;
 
 import domain.Project;
+import domain.notification.observer.Message;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,9 @@ public class Forum {
 
     public void addTopic(Topic topic){
         topic.registerNotificationObserver(this.project.getDevelopers());
+        topic.removeNotificationObserver(topic.getStart());
+        topic.notifyNotificationObserver(new Message("Forum - "+ topic.getStart().getName() + " opened: " + topic.getTitle(), topic.getContent()));
+        topic.registerNotificationObserver(topic.getStart());
         this.topics.add(topic);
     }
 }
