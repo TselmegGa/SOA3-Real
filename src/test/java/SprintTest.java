@@ -34,7 +34,7 @@ class SprintTest {
         String result = sprint.getRapport().getRapport();
 
         assertEquals("Sprint went well", sprint.getSummery());
-        assertEquals(result ,rapport.getRapport());
+        assertEquals(rapport.getRapport(), result);
         assertEquals(sprint.getItems().get(0), item);
     }
     @Test
