@@ -11,7 +11,7 @@ public class DotNetPipeline extends PipelineTemplate {
 
     @Override
     public void run() {
-        NewGetInstall();
+        newGetInstall();
         if(restore){
             restore();
         }
@@ -29,7 +29,7 @@ public class DotNetPipeline extends PipelineTemplate {
         logger.info("Using NuGet restore");
 
     }
-    private void NewGetInstall(){
+    private void newGetInstall(){
         logger.info("Using NuGet installer");
     }
 }

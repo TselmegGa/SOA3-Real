@@ -9,7 +9,6 @@ import domain.notification.builder.providers.MailProvider;
 import domain.notification.observer.Message;
 import domain.templates.DotNetPipeline;
 import domain.templates.NodeJSPipeline;
-import domain.templates.PipelineTemplate;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -81,7 +80,7 @@ public class Main {
         {
             item.setUser(dirk);
         }catch (Exception ex){
-            System.out.println(ex.getMessage());
+            logger.info(ex.getMessage());
         }
         item.start();
         item.ready();
@@ -100,7 +99,7 @@ public class Main {
         var start = Instant.now();
         var end = Instant.now();
         end = end.plusMillis(10000);
-        ZoneId centralEuropianTime = ZoneId.of("CET");
+        var centralEuropianTime = ZoneId.of("CET");
         var startTime = ZonedDateTime.ofInstant(start, centralEuropianTime);
         var endTime = ZonedDateTime.ofInstant(end, centralEuropianTime);
 
