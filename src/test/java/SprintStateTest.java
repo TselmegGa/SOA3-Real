@@ -2,7 +2,7 @@ import domain.*;
 import domain.behavior.DeploymentReviewBehavior;
 import domain.behavior.FinishedBehavior;
 import domain.behavior.NormalReviewBehavior;
-import domain.SprintState.*;
+
 import domain.sprint.state.*;
 import org.junit.jupiter.api.Test;
 
