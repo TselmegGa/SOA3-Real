@@ -14,13 +14,7 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-        <sonar.language>java</sonar.language>
-        <sonar.coverage.exclusions>jacoco-report/**</sonar.coverage.exclusions>
-        <aggregate.report.dir>${project.basedir}../target/site/jacoco-aggregate/jacoco.xml</aggregate.report.dir>
-        <sonar.coverage.jacoco.xmlReportPaths>${basedir}/${aggregate.report.dir}
-        </sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.jacoco.xmlReportPaths>../target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
 
 
@@ -68,23 +62,17 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>0.8.7</version>
-                    <configuration>
-                        <output>file</output>
-                        <append>true</append>
-                    </configuration>
                     <executions>
                         <execution>
-                            <id>jacoco-initialize</id>
+                            <id>prepare-agent</id>
                             <goals>
                                 <goal>prepare-agent</goal>
                             </goals>
-                            <phase>test-compile</phase>
                         </execution>
                         <execution>
-                            <id>jacoco-site</id>
-                            <phase>verify</phase>
+                            <id>report</id>
                             <goals>
-                                <goal>report-aggregate</goal>
+                                <goal>report</goal>
                             </goals>
                         </execution>
                     </executions>
