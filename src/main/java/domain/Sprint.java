@@ -94,12 +94,6 @@ public class Sprint {
     public Project getProject() {
         return project;
     }
-    public String getName(){
-        return "Sprint van " + startTime.toString() + " t/m " + endTime.toString();
-    }
-    public NewSprintState getNewSprintState() {
-        return newSprintState;
-    }
     public AnnulledState getAnnulledState() {
         return annulledState;
     }
