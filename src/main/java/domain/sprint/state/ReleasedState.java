@@ -13,7 +13,7 @@ public class ReleasedState extends SprintState {
 
     @Override
     public void closed() {
-        sprint.setState(sprint.closedState);
+        sprint.setState(sprint.getClosedState());
         logger.info("The sprint has been closed");
     }
 

@@ -10,7 +10,7 @@ public class VersionControl {
         return branches;
     }
 
-    public void setBranches(ArrayList<Branch> branches) {
+    public void setBranches(List<Branch> branches) {
         this.branches = branches;
     }
 }

@@ -1,8 +1,8 @@
 import domain.notification.builder.INotificationProvider;
 import domain.notification.builder.Notification;
 import domain.notification.builder.NotificationBuilder;
-import domain.notification.builder.Providers.DiscordProvider;
-import domain.notification.builder.Providers.MailProvider;
+import domain.notification.builder.providers.DiscordProvider;
+import domain.notification.builder.providers.MailProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

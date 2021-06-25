@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 class ItemRepoTest {
@@ -88,6 +89,6 @@ class ItemRepoTest {
         Item result2 = repo.get(1);
         //assert
         assertEquals(result, item);
-        assertEquals(result2, null);
+        assertNull(result2);
     }
 }

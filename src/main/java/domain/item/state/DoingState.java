@@ -39,7 +39,7 @@ public class DoingState extends BasicNotificationSubject implements IPhaseState 
 
     @Override
     public boolean testing() {
-        print("Must be in ready for testing phase first");
+        print("This is the testing phase");
         return false;
     }
 

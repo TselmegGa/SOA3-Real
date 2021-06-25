@@ -18,8 +18,8 @@ class RoleTest {
         role.setSprintRole(SprintRoles.NONE);
         role.setSprintRole(SprintRoles.TESTER);
 
-        assertEquals(role.getProjectRole(), ProjectRoles.DEVELOPER);
-        assertEquals(role.getSprintRole(), SprintRoles.TESTER);
+        assertEquals( ProjectRoles.DEVELOPER, role.getProjectRole());
+        assertEquals(SprintRoles.TESTER, role.getSprintRole());
 
     }
 

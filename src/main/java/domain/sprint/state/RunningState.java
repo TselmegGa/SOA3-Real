@@ -20,7 +20,7 @@ public class RunningState extends SprintState {
 
     @Override
     public void finished() {
-        sprint.setState(sprint.finishedState);
+        sprint.setState(sprint.getFinishedState());
         logger.info("The sprint has been finished");
     }
 

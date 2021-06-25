@@ -18,13 +18,13 @@ public class FinishedState extends SprintState  {
 
     @Override
     public void annulled() {
-        sprint.setState(sprint.annulledState);
+        sprint.setState(sprint.getAnnulledState());
         logger.info("The sprint has been annulled and there will be no meeting with the product owner");
         sprint.onFinish(new NormalReviewBehavior());
     }
     @Override
     public void released() {
-        sprint.setState(sprint.releasedState);
+        sprint.setState(sprint.getReleasedState());
         notificationSubject.registerNotificationObserver(sprint.getProject().getProductOwners());
         notificationSubject.registerNotificationObserver(sprint.getProject().getScrumMasters());
         notificationSubject.notifyNotificationObserver(new Message("", ""));

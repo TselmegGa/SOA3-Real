@@ -1,4 +1,4 @@
-package domainservice;
+package domain.service;
 
 public interface IRepository<Object> {
     Iterable<Object> getAll();

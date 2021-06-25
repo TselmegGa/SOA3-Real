@@ -1,4 +1,4 @@
-package domainservice;
+package domain.service;
 
 import domain.Sprint;
 

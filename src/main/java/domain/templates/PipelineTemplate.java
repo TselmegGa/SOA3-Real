@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 public abstract class PipelineTemplate extends BasicNotificationSubject {
-    private static final Logger logger = LogManager.getLogger(PipelineTemplate.class);
+    protected static final Logger logger = LogManager.getLogger(PipelineTemplate.class);
     private Project project;
     private String name;
     private String link;
@@ -18,7 +18,7 @@ public abstract class PipelineTemplate extends BasicNotificationSubject {
         publish();
     }
 
-    public PipelineTemplate(Project project, String link, String name) {
+    protected PipelineTemplate(Project project, String link, String name) {
         this.project = project;
         this.link = link;
         this.name = name;

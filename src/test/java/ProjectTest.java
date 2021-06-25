@@ -57,7 +57,7 @@ class ProjectTest {
         project.setForum(forum);
 
         assertEquals(project.getSprints().get(0), sprint);
-        assertEquals(project.getSprints().size(),2);
+        assertEquals(2, project.getSprints().size());
         assertEquals(project.getVersionControl(), vc);
         assertEquals(project.getBacklog(), backlog);
     }

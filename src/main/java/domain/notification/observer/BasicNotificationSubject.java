@@ -6,7 +6,7 @@ import java.util.List;
 // een standaard implementatie van NotificationSubject
 // Dit omdat we het op meerdere plekken gaan gebruiken en het niet logish is om telkens dezelfde implementie opnieuw te schrijven.
 public class BasicNotificationSubject implements NotificationSubject {
-    private List<NotificationObserver> listeners = new ArrayList<NotificationObserver>();
+    private List<NotificationObserver> listeners = new ArrayList<>();
 
     @Override
     public void registerNotificationObserver(NotificationObserver notificationObserver) {
@@ -19,7 +19,7 @@ public class BasicNotificationSubject implements NotificationSubject {
     @Override
     public void registerNotificationObserver(NotificationObserver[] notificationObserver) {
         //Voor kom duplicateds
-        for (int i = 0; i < notificationObserver.length; i++) {
+        for (var i = 0; i < notificationObserver.length; i++) {
             if(!this.listeners.contains(notificationObserver[i])){
                 listeners.add(notificationObserver[i]);
             }

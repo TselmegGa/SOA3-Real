@@ -14,12 +14,12 @@ public class Sprint {
 
 
 
-    public NewSprintState newSprintState;
-    public AnnulledState annulledState;
-    public ClosedState closedState;
-    public FinishedState finishedState;
-    public ReleasedState releasedState;
-    public RunningState runningState;
+    private NewSprintState newSprintState;
+    private AnnulledState annulledState;
+    private ClosedState closedState;
+    private FinishedState finishedState;
+    private ReleasedState releasedState;
+    private RunningState runningState;
     private FinishedBehavior behavior;
     private SprintState state;
     private List<Item> items;
@@ -38,7 +38,7 @@ public class Sprint {
         newSprintState = new NewSprintState(this);
         annulledState = new AnnulledState(this);
         finishedState = new FinishedState(this);
-        closedState = new ClosedState(this);
+        closedState = new ClosedState();
         releasedState = new ReleasedState(this);
         runningState = new RunningState(this);
         state = newSprintState;
@@ -96,6 +96,24 @@ public class Sprint {
     }
     public String getName(){
         return "Sprint van " + startTime.toString() + " t/m " + endTime.toString();
+    }
+    public NewSprintState getNewSprintState() {
+        return newSprintState;
+    }
+    public AnnulledState getAnnulledState() {
+        return annulledState;
+    }
+    public ClosedState getClosedState() {
+        return closedState;
+    }
+    public FinishedState getFinishedState() {
+        return finishedState;
+    }
+    public ReleasedState getReleasedState() {
+        return releasedState;
+    }
+    public RunningState getRunningState() {
+        return runningState;
     }
 
     public void addItem(Item item){

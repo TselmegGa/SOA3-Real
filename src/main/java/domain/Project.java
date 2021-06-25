@@ -38,16 +38,16 @@ public class Project {
         return users;
     }
     public User[] getDevelopers() {
-        return (User[]) Arrays.stream(users).filter(u -> u.getRole().getSprintRole() == SprintRoles.DEVELOPER ).toArray(size -> new User[size]);
+        return Arrays.stream(users).filter(u -> u.getRole().getSprintRole() == SprintRoles.DEVELOPER ).toArray(size -> new User[size]);
     }
     public User[] getTesters() {
-        return (User[]) Arrays.stream(users).filter(u -> u.getRole().getSprintRole() == SprintRoles.TESTER ).toArray(size -> new User[size]);
+        return Arrays.stream(users).filter(u -> u.getRole().getSprintRole() == SprintRoles.TESTER ).toArray(size -> new User[size]);
     }
     public User[] getScrumMasters() {
-        return (User[]) Arrays.stream(users).filter(u -> u.getRole().getProjectRole()  == ProjectRoles.SCRUMMASTER ).toArray(size -> new User[size]);
+        return Arrays.stream(users).filter(u -> u.getRole().getProjectRole()  == ProjectRoles.SCRUMMASTER ).toArray(size -> new User[size]);
     }
     public User[] getProductOwners() {
-        return (User[]) Arrays.stream(users).filter(u -> u.getRole().getProjectRole()  == ProjectRoles.OWNER ).toArray(size -> new User[size]);
+        return Arrays.stream(users).filter(u -> u.getRole().getProjectRole()  == ProjectRoles.OWNER ).toArray(size -> new User[size]);
     }
 
 

@@ -10,7 +10,7 @@ public class Rapport {
     }
 
     public String getRapport() {
-        StringBuilder stringBuilder = new StringBuilder();
+        var stringBuilder = new StringBuilder();
         if(header != null){
             stringBuilder.append("Header: ");
             stringBuilder.append(header);

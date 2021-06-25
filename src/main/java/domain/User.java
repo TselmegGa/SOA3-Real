@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 public class User extends NotificationObserver {
     private static final Logger logger = LogManager.getLogger(User.class);
-    private String Name;
+    private String name;
     private Role role;
     private int age;
     private String email;
@@ -18,18 +18,18 @@ public class User extends NotificationObserver {
     }
 
     public User(String name, Role role, int age, String email) {
-        Name = name;
+        name = name;
         this.role = role;
         this.age = age;
         this.email = email;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
     public Role getRole() {
@@ -72,7 +72,7 @@ public class User extends NotificationObserver {
     @Override
     public String toString() {
         return "User{" +
-                "Name='" + Name + '\'' +
+                "Name='" + name + '\'' +
                 ", role=" + role +
                 ", age=" + age +
                 ", email='" + email + '\'' +

@@ -11,7 +11,7 @@ public class Notification {
     }
 
     public void send(String subject, String message) {
-        providers.forEach((p) -> p.send(subject, message));
+        providers.forEach(p -> p.send(subject, message));
     }
 
     @Override

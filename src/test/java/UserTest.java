@@ -22,10 +22,10 @@ class UserTest {
         user.setEmail("Mike@live.com");
         user.setAge(45);
 
-        assertEquals(user.getRole(), role);
-        assertEquals(user.getAge(), 45);
-        assertEquals(user.getEmail(), "Mike@live.com");
-        assertEquals(user.getName(), "Mike John");
+        assertEquals(role, user.getRole());
+        assertEquals(45, user.getAge());
+        assertEquals("Mike@live.com", user.getEmail());
+        assertEquals("Mike John", user.getName());
 
     }
 }

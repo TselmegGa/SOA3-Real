@@ -1,11 +1,9 @@
-package domain.notification.builder.Providers;
+package domain.notification.builder.providers;
 
 import domain.notification.builder.INotificationProvider;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 public class MailProvider implements INotificationProvider {
-    private static final Logger logger = LogManager.getLogger(MailProvider.class);
+
     String to;
 
     public MailProvider(String to) {

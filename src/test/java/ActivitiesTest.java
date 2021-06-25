@@ -17,8 +17,8 @@ class ActivitiesTest {
         activity.setUser(mike);
 
 
-        assertEquals(activity.getDescription(), "Home page - Footer");
-        assertEquals(activity.getValue(), 7);
+        assertEquals( "Home page - Footer", activity.getDescription());
+        assertEquals(7, activity.getValue());
         assertEquals(activity.getUser(), mike);
     }
 }

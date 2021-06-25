@@ -1,10 +1,11 @@
-import domain.*;
+package domain;
+
 import domain.enums.ProjectRoles;
 import domain.enums.SprintRoles;
 import domain.forum.composit.Reaction;
 import domain.forum.composit.Topic;
 import domain.notification.builder.NotificationBuilder;
-import domain.notification.builder.Providers.MailProvider;
+import domain.notification.builder.providers.MailProvider;
 import domain.notification.observer.Message;
 import domain.templates.DotNetPipeline;
 import domain.templates.NodeJSPipeline;
@@ -17,22 +18,22 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-public class main {
-    private static final Logger logger = LogManager.getLogger(User.class);
+public class Main {
+    private static final Logger logger = LogManager.getLogger(Main.class);
     public static void main(String[] args){
         BasicConfigurator.configure();
-        Project project = new Project();
+        var project = new Project();
 
 
         //Create users
-        User bob = new User();
-        User charlie = new User();
-        User dirk = new User();
-        User bart = new User();
+        var bob = new User();
+        var charlie = new User();
+        var dirk = new User();
+        var bart = new User();
         bob.setAge(25);
         bob.setEmail("Bob@hotmail.com");
         bob.setName("Bob");
-        Role role = new Role();
+        var role = new Role();
         role.setProjectRole(ProjectRoles.DEVELOPER);
         role.setSprintRole(SprintRoles.TESTER);
         bob.setRole(role);
@@ -69,13 +70,13 @@ public class main {
 
         bart.setNotification(new NotificationBuilder().addProvider(new MailProvider("bart@hotmail.com")).build());
 
-        System.out.println(dirk.toString());
+        logger.info(dirk.toString());
 
-        Message message = new Message("Test Subject", "Dit is een test bericht ter controle");
+        var message = new Message("Test Subject", "Dit is een test bericht ter controle");
         dirk.onNotification(message);
         charlie.onNotification(message);
         // Create items with State pattern
-        Item item = new Item(4, project, "Main page");
+        var item = new Item(4, project, "domain.Main page");
         try
         {
             item.setUser(dirk);
@@ -90,20 +91,21 @@ public class main {
         project.setUsers(new User[]{bob, charlie, dirk, bart});
 
         //Template pattern
-        PipelineTemplate template = new NodeJSPipeline(project, "Github","NodeJS Pipeline 1", "dir/js");
-        PipelineTemplate template2 = new DotNetPipeline(project, "Azure",".NET Pipeline 2", true);
+        var template = new NodeJSPipeline(project, "Github","NodeJS Pipeline 1", "dir/js");
+        var template2 = new DotNetPipeline(project, "Azure",".NET Pipeline 2", true);
         template.run();
+        template2.run();
 
         //Time and Timezone
-        Instant start = Instant.now();
-        Instant end = Instant.now();
+        var start = Instant.now();
+        var end = Instant.now();
         end = end.plusMillis(10000);
         ZoneId centralEuropianTime = ZoneId.of("CET");
-        ZonedDateTime startTime = ZonedDateTime.ofInstant(start, centralEuropianTime);
-        ZonedDateTime endTime = ZonedDateTime.ofInstant(end, centralEuropianTime);
+        var startTime = ZonedDateTime.ofInstant(start, centralEuropianTime);
+        var endTime = ZonedDateTime.ofInstant(end, centralEuropianTime);
 
         //Create een Sprint with State pattern and Strategy pattern
-        Sprint sprint = new Sprint(startTime, endTime);
+        var sprint = new Sprint(startTime, endTime);
 
         project.addSprint(sprint);
         sprint.run();
@@ -124,7 +126,7 @@ public class main {
         sprint.getBehavior().planReview();
         sprint.close();
 
-        Sprint sprint2 = new Sprint(startTime, endTime);
+        var sprint2 = new Sprint(startTime, endTime);
 
         project.addSprint(sprint2);
         sprint2.run();
@@ -134,17 +136,17 @@ public class main {
         sprint2.close();
 
         //Forum
-        Topic topic = new Topic(charlie, new Item(4, project, "Main page"), "Java Compile error", "bij het compile krijg ik een fout melding");
+        var topic = new Topic(charlie, new Item(4, project, "domain.Main page"), "Java Compile error", "bij het compile krijg ik een fout melding");
         project.getForum().addTopic(topic);
 
         topic.addReaction(new Reaction(bob, "Heb je geen santex errors?"));
         topic.addReaction(new Reaction(dirk, "Intelij geeft geen errors"));
-//        topic.addReaction(new Reaction(bob, "Dat is vreemd"));
-        System.out.println(topic.toString());
+        topic.addReaction(new Reaction(bob, "Dat is vreemd"));
+        logger.info(topic.toString());
 
 
 
-        System.out.println("Done!");
+        logger.info("Done!");
     }
 
 

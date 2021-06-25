@@ -113,7 +113,7 @@ public class Item {
     public void setState(IPhaseState state) {
         this.state = state;
     }
-    public boolean setActivities(ArrayList<Activity> activities) {
+    public boolean setActivities(List<Activity> activities) {
         if(!hasUser()){
             this.activities = activities;
             return true;

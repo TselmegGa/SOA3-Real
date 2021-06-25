@@ -14,7 +14,7 @@ public class Forum {
         setupListeners();
     }
 
-    public Forum(Project project, ArrayList<Topic> topics) {
+    public Forum(Project project, List<Topic> topics) {
         this.topics = topics;
         this.project = project;
         setupListeners();

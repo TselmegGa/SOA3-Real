@@ -1,11 +1,8 @@
 package domain.templates;
 
 import domain.Project;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 public class DotNetPipeline extends PipelineTemplate {
-    private static final Logger logger = LogManager.getLogger(DotNetPipeline.class);
     private boolean restore;
     public DotNetPipeline(Project project, String link,String name, boolean restore) {
         super(project, link, name);
@@ -14,7 +11,7 @@ public class DotNetPipeline extends PipelineTemplate {
 
     @Override
     public void run() {
-        NGInstall();
+        NewGetInstall();
         if(restore){
             restore();
         }
@@ -32,7 +29,7 @@ public class DotNetPipeline extends PipelineTemplate {
         logger.info("Using NuGet restore");
 
     }
-    private void NGInstall(){
+    private void NewGetInstall(){
         logger.info("Using NuGet installer");
     }
 }

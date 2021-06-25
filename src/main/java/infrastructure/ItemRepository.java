@@ -1,7 +1,7 @@
 package infrastructure;
 
 import domain.Item;
-import domainservice.IItemRepository;
+import domain.service.IItemRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
