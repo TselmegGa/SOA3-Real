@@ -14,7 +14,7 @@ public class DiscordProvider implements INotificationProvider {
 
     @Override
     public void send(String subject, String message) {
-        logger.info("DiscordProvider Send: Message { Subject: " +  subject+ ", Message: " + message+ "} To key: " + this.key);
+        System.out.println("DiscordProvider Send: Message { Subject: " +  subject+ ", Message: " + message+ "} To key: " + this.key);
     }
 
     @Override

@@ -47,7 +47,6 @@ class NotificationBuilderTest {
         Notification notificationFromBuilder = new NotificationBuilder().addProvider(mailProvider).addProvider(discordProvider).build();
 
         notificationFromBuilder.send("Test onderwerp", "Test bericht");
-
         assertTrue(outputStreamCaptor.toString().trim().contains("MailProvider Send: Message { Subject: Test onderwerp, Message: Test bericht} To: student@avans.nl"));
         assertTrue(outputStreamCaptor.toString().trim().contains("DiscordProvider Send: Message { Subject: Test onderwerp, Message: Test bericht} To key: 1fc93908a9403d61fbf587381dac002b"));
 

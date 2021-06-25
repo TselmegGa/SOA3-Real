@@ -15,7 +15,7 @@ public class MailProvider implements INotificationProvider {
 
     @Override
     public void send(String subject, String message) {
-        logger.info("MailProvider Send: Message { Subject: " +  subject+ ", Message: " + message+ "} To: " + this.to);
+        System.out.println("MailProvider Send: Message { Subject: " +  subject+ ", Message: " + message+ "} To: " + this.to);
     }
 
     @Override
