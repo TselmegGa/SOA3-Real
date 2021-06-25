@@ -3,18 +3,19 @@ package domain;
 import domain.templates.PipelineTemplate;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Branch {
     private String code;
     private String name;
-    private ArrayList<PipelineTemplate> pipelines;
+    private List<PipelineTemplate> pipelines;
 
     public Branch(String name) {
         this.name = name;
         pipelines = new ArrayList<>();
     }
 
-    public Branch(String code, String name, ArrayList<PipelineTemplate> pipelines) {
+    public Branch(String code, String name, List<PipelineTemplate> pipelines) {
         this.code = code;
         this.name = name;
         this.pipelines = pipelines;
@@ -36,11 +37,11 @@ public class Branch {
         this.code = code;
     }
 
-    public ArrayList<PipelineTemplate> getPipelines() {
+    public List<PipelineTemplate> getPipelines() {
         return pipelines;
     }
 
-    public void setPipelines(ArrayList<PipelineTemplate> pipelines) {
+    public void setPipelines(List<PipelineTemplate> pipelines) {
         this.pipelines = pipelines;
     }
     public void addPipelines(PipelineTemplate pipeline) {

@@ -1,6 +1,6 @@
 package domain;
 
-import domain.SprintState.*;
+
 import domain.behavior.*;
 import domain.sprint.state.*;
 

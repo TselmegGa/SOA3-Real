@@ -1,15 +1,16 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Backlog {
-    private ArrayList<Item> items;
+    private List<Item> items;
 
     public Backlog() {
         this.items =  new ArrayList<>();
     }
 
-    public ArrayList<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 

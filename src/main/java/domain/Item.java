@@ -1,6 +1,6 @@
 package domain;
 
-import domain.State.*;
+
 import domain.item.state.*;
 
 import java.util.ArrayList;
