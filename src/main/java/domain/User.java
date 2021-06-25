@@ -29,7 +29,7 @@ public class User extends NotificationObserver {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     public Role getRole() {

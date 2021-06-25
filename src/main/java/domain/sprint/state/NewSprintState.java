@@ -21,7 +21,7 @@ public class NewSprintState extends SprintState {
 
     @Override
     public void running() {
-        sprint.setState(sprint.getReleasedState());
+        sprint.setState(sprint.getRunningState());
         logger.info("The sprint has been started");
     }
 }
