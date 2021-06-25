@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - domain.Main
+      - main
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
