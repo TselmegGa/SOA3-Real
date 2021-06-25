@@ -2,8 +2,11 @@ package infrastructure;
 
 import domain.Item;
 import domainservice.IItemRepository;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class ItemRepository implements IItemRepository {
+    private static final Logger logger = LogManager.getLogger(ItemRepository.class);
     @Override
     public Iterable<Item> getAll() {
         return null;
@@ -21,11 +24,11 @@ public class ItemRepository implements IItemRepository {
 
     @Override
     public void save(Item o) {
-
+        logger.info("Saving");
     }
 
     @Override
     public void delete(Item o) {
-
+        logger.info("Deleting");
     }
 }

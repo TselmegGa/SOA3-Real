@@ -1,12 +1,12 @@
 package domain;
 
 public class Rapport {
-    private String rapport;
+    private String description;
     private String header;
     private String footer;
 
     public Rapport(String rapport) {
-        this.rapport = rapport;
+        this.description = rapport;
     }
 
     public String getRapport() {
@@ -16,7 +16,7 @@ public class Rapport {
             stringBuilder.append(header);
             stringBuilder.append("\n" );
         }
-        stringBuilder.append(rapport);
+        stringBuilder.append(description);
         stringBuilder.append("\n" );
         if(footer != null){
             stringBuilder.append("Footer: ");

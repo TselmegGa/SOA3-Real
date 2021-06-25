@@ -26,14 +26,13 @@ public class DotNetPipeline extends PipelineTemplate {
     public void build(){
         logger.info("Building project.sln");
         logger.info("installing dir");
-        logger.info("------------------------");
+
     }
     private void restore(){
         logger.info("Using NuGet restore");
-        logger.info("------------------------");
+
     }
     private void NGInstall(){
         logger.info("Using NuGet installer");
-        logger.info("------------------------");
     }
 }

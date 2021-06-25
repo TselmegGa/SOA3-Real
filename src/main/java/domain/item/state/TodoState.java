@@ -13,7 +13,7 @@ public class TodoState implements IPhaseState {
 
     @Override
     public boolean todo() {
-        logger.info("Currently in to do phase");
+        print("Currently in to do phase");
         return false;
     }
 
@@ -21,30 +21,34 @@ public class TodoState implements IPhaseState {
     public boolean doing() {
         if(item.hasUser() || item.hasActivities()){
             item.setState(item.getDoingState());
-            logger.info("The item has been moved to Doing phase");
+            print("The item has been moved to Doing phase");
             return true;
         }
         else{
-            logger.info("Need user or activities");
+            print("Need user or activities");
             return false;
         }
     }
 
     @Override
     public boolean readyForTesting() {
-        logger.info("Must be worked on first");
+        print("Cannot be set to Ready for Testing phase");
         return false;
     }
 
     @Override
     public boolean testing() {
-        logger.info("Must be worked on first");
+        print("Cannot be set to Testing phase");
         return false;
     }
 
     @Override
     public boolean done() {
-        logger.info("Must be worked on first");
+        print("Cannot be set to Done phase");
         return false;
+    }
+    @Override
+    public void print(String text) {
+        logger.info(text);
     }
 }

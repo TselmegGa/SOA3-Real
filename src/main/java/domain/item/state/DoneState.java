@@ -13,32 +13,36 @@ public class DoneState implements IPhaseState {
     }
     @Override
     public boolean todo() {
-        logger.info("Cannot be set to To do phase");
+        print("Cannot be set to To do phase");
         return false;
     }
 
     @Override
     public boolean doing() {
-        logger.info("Cannot be set to Doing phase");
+        print("Cannot be set to Doing phase");
         return false;
     }
 
     @Override
     public boolean readyForTesting() {
         item.setState(item.getReadyForTestingState());
-        logger.info("The tests have failed to meet de Definition of Done");
+        print("The tests have failed to meet de Definition of Done");
         return true;
     }
 
     @Override
     public boolean testing() {
-        logger.info("Cannot be set to Testing phase");
+        print("Cannot be set to Testing phase");
         return false;
     }
 
     @Override
     public boolean done() {
-        logger.info("Currently in Done phase");
+        print("Currently in Done phase");
         return false;
+    }
+    @Override
+    public void print(String text) {
+        logger.info(text);
     }
 }

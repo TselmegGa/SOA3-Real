@@ -21,10 +21,10 @@ public class AndroidPipeline extends PipelineTemplate {
     @Override
     public void build(){
         logger.info("gradlew build");
-        logger.info("------------------------");
+
     }
     private void sign(){
         logger.info("Signing and Aligning APK files");
-        logger.info("------------------------");
+
     }
 }

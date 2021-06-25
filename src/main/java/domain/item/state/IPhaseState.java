@@ -8,4 +8,5 @@ public interface IPhaseState {
     boolean readyForTesting();
     boolean testing();
     boolean done();
+    void print(String text);
 }

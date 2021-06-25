@@ -18,13 +18,4 @@ class mainTest {
         assertEquals(bob.toString(), "User{Name='Bob', role=null, age=25, email='Bob@hotmail.com', notification='null'}");
     }
 
-    @Test
-    void createBacklogItems(){
-        Project project = new Project();
-//        Sprint sprint = new Sprint()
-
-
-
-
-    }
 }

@@ -2,6 +2,8 @@ package domain;
 
 
 import domain.item.state.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +22,7 @@ public class Item {
     private String title;
     private String description;
     private Project project;
+    private static final Logger logger = LogManager.getLogger(Item.class);
 
     public Item(List<Activity> activities, int value, String title, String description, Project project) {
         this.project = project;
@@ -99,7 +102,7 @@ public class Item {
             this.user = user;
             return true;
         }else{
-            System.out.println("Failed to add user");
+            logger.info("Failed to add user");
             return false;
         }
 
@@ -115,7 +118,7 @@ public class Item {
             this.activities = activities;
             return true;
         }else{
-            System.out.println("Failed to add activities");
+            logger.info("Failed to add activities");
             return false;
         }
     }
@@ -131,7 +134,7 @@ public class Item {
             return getUser() != null;
         }
         else{
-            System.out.println("Already has activities");
+            logger.info("Already has activities");
             return true;
         }
     }
@@ -139,7 +142,7 @@ public class Item {
         if(getUser() == null){
             return false;
         }
-        System.out.println("Already has a user");
+        logger.info("Already has a user");
         return true;
     }
     public boolean checkTodo(){

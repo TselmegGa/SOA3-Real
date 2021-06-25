@@ -13,32 +13,36 @@ public class ReadyForTestingState implements IPhaseState {
     @Override
     public boolean todo() {
         item.setState(item.getTodoState());
-        logger.info("The item has been moved to To do phase");
+        print("The item has been moved to To do phase");
         return true;
     }
 
     @Override
     public boolean doing() {
-        logger.info("Cannot be set to Doing phase");
+        print("Cannot be set to Doing phase");
         return false;
     }
 
     @Override
     public boolean readyForTesting() {
-        logger.info("Currently in Ready for testing phase");
+        print("Currently in Ready for testing phase");
         return false;
     }
 
     @Override
     public boolean testing() {
         item.setState(item.getTestingState());
-        logger.info("The item has started testing");
+        print("The item has started testing");
         return true;
     }
 
     @Override
     public boolean done() {
-        logger.info("The item must be tested first");
+        print("The item must be tested first");
         return false;
+    }
+    @Override
+    public void print(String text) {
+        logger.info(text);
     }
 }

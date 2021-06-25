@@ -23,13 +23,13 @@ public class NodeJSPipeline extends PipelineTemplate {
     public void build(){
         logger.info("Run npm install");
         logger.info("installing nodejs");
-        logger.info("------------------------");
+
 //        if(true){
             this.failed("NPM Install failed!");
 //        }
     }
     private void copyPath(){
         logger.info("Copying files to " + path);
-        logger.info("------------------------");
+
     }
 }
