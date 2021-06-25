@@ -6,5 +6,5 @@ public interface NotificationSubject {
     void registerNotificationObserver(NotificationObserver[] notificationObserver);
     void removeNotificationObserver(NotificationObserver notificationObserver);
     void notifyNotificationObserver(Message message);
-//    void notifyNotificationObserverExcept(Message message, NotificationObserver... notificationObservers);
+
 }

@@ -36,9 +36,6 @@ public class BasicNotificationSubject implements NotificationSubject {
         listeners.forEach((notificationObserver -> notificationObserver.onNotification(message)));
     }
 
-//    @Override
-//    public void notifyNotificationObserverExcept(Message message, NotificationObserver... notificationObservers) {
-//        listeners.forEach((notificationObserver ->  notificationObserver.onNotification(message)));
-//    }
+
 
 }

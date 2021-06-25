@@ -6,7 +6,7 @@ import domain.notification.observer.NotificationObserver;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-public class User extends NotificationObserver {
+public class User implements NotificationObserver {
     private static final Logger logger = LogManager.getLogger(User.class);
     private String name;
     private Role role;
@@ -18,6 +18,7 @@ public class User extends NotificationObserver {
     }
 
     public User(String name, Role role, int age, String email) {
+
         this.name = name;
         this.role = role;
         this.age = age;
