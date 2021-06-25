@@ -27,7 +27,7 @@ class ItemTest {
         item.setValue(7);
         item.setActivities(activities);
         //assert
-        assertEquals(activities, item.getActivities() );
+        assertEquals(activities, item.getActivities());
         assertEquals(7, item.getValue());
     }
     @Test
@@ -39,7 +39,7 @@ class ItemTest {
         //act
         item.setUser(bob);
         //assert
-        assertEquals(bob, item.getUser() );
+        assertEquals(bob, item.getUser());
         assertEquals(4, item.getValue());
     }
 
