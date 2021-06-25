@@ -3,11 +3,9 @@ package domain;
 import domain.notification.builder.Notification;
 import domain.notification.observer.Message;
 import domain.notification.observer.NotificationObserver;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+
 
 public class User implements NotificationObserver {
-    private static final Logger logger = LogManager.getLogger(User.class);
     private String name;
     private Role role;
     private int age;
