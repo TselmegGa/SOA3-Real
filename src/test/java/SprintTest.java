@@ -33,9 +33,9 @@ class SprintTest {
 
         String result = sprint.getRapport().getRapport();
 
-        assertSame(sprint.getSummery(), "Sprint went well");
-        assertSame(result ,rapport.getRapport());
-        assertSame(sprint.getItems().get(0), item);
+        assertEquals(sprint.getSummery(), "Sprint went well");
+        assertEquals(result ,rapport.getRapport());
+        assertEquals(sprint.getItems().get(0), item);
     }
     @Test
     void sprintRunningTest() {

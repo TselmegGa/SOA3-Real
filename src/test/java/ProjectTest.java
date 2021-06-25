@@ -7,7 +7,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 class ProjectTest {
@@ -27,8 +27,8 @@ class ProjectTest {
         project.setUsers(users);
         project.addSprint(sprint);
 
-        assertSame(project.getUsers()[0], user);
-        assertSame(project.getSprints().get(0), sprint);
+        assertEquals(project.getUsers()[0], user);
+        assertEquals(project.getSprints().get(0), sprint);
     }
     @Test
     void ProjectWithConstucterTest(){
@@ -56,9 +56,9 @@ class ProjectTest {
         project.addSprint(sprint);
         project.setForum(forum);
 
-        assertSame(project.getSprints().get(0), sprint);
-        assertSame(project.getSprints().size(),2);
-        assertSame(project.getVersionControl(), vc);
-        assertSame(project.getBacklog(), backlog);
+        assertEquals(project.getSprints().get(0), sprint);
+        assertEquals(project.getSprints().size(),2);
+        assertEquals(project.getVersionControl(), vc);
+        assertEquals(project.getBacklog(), backlog);
     }
 }

@@ -12,7 +12,7 @@ class BacklogTest {
         boolean result = backlog.addItem(item);
 
         assertTrue(result);
-        assertSame(backlog.getItems().get(backlog.getItems().size()-1), item);
+        assertEquals(backlog.getItems().get(backlog.getItems().size()-1), item);
     }
     @Test
     void addingFaultyItemToBacklogShouldFail(){

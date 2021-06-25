@@ -27,8 +27,8 @@ class ItemTest {
         item.setValue(7);
         item.setActivities(activities);
         //assert
-        assertSame(item.getActivities(), activities );
-        assertSame(item.getValue(), 7 );
+        assertEquals(item.getActivities(), activities );
+        assertEquals(item.getValue(), 7 );
     }
     @Test
     void createItemWithUser(){
@@ -39,8 +39,8 @@ class ItemTest {
         //act
         item.setUser(bob);
         //assert
-        assertSame(item.getUser(), bob );
-        assertSame(item.getValue(), 4 );
+        assertEquals(item.getUser(), bob );
+        assertEquals(item.getValue(), 4 );
     }
 
     @Test

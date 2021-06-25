@@ -34,8 +34,8 @@ class BranchTest {
 
         branch.setCode(code);
 
-        assertSame(branch.getCode(), code);
-        assertSame(branch2.getPipelines().get(0), template);
+        assertEquals(branch.getCode(), code);
+        assertEquals(branch2.getPipelines().get(0), template);
 
     }
 }

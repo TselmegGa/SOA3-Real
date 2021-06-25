@@ -26,7 +26,7 @@ class SprintStateTest {
         sprint.run();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass() , RunningState.class);
+        assertEquals(result.getClass() , RunningState.class);
     }
     @Test
     void SprintWithNewSprintStateCanSwitchToAnnulledState(){
@@ -41,7 +41,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), AnnulledState.class);
+        assertEquals(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithNewSprintStateCannotSwitchToSomeState(){
@@ -56,7 +56,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), ClosedState.class);
+        assertNotEquals(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithRunningStateCannotSwitchToAnnulledState(){
@@ -72,7 +72,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), AnnulledState.class);
+        assertNotEquals(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithRunningStateCanSwitchToFinishedState(){
@@ -88,7 +88,7 @@ class SprintStateTest {
         sprint.finish();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), FinishedState.class);
+        assertEquals(result.getClass(), FinishedState.class);
     }
     @Test
     void SprintWithRunningStateCannotSwitchToSomeState(){
@@ -105,7 +105,7 @@ class SprintStateTest {
         sprint.release();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), ReleasedState.class);
+        assertNotEquals(result.getClass(), ReleasedState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToReleasedState(){
@@ -128,7 +128,7 @@ class SprintStateTest {
         sprint.release();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), ReleasedState.class);
+        assertEquals(result.getClass(), ReleasedState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToAnnulledState(){
@@ -151,7 +151,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), AnnulledState.class);
+        assertEquals(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToSomeState(){
@@ -169,7 +169,7 @@ class SprintStateTest {
         sprint.run();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), RunningState.class);
+        assertNotEquals(result.getClass(), RunningState.class);
     }
     @Test
     void SprintWithReleasedStateCanSwitchToClosedState(){
@@ -193,7 +193,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), ClosedState.class);
+        assertEquals(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithReleasedStateCannotSwitchToSomeState(){
@@ -218,7 +218,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), AnnulledState.class);
+        assertNotEquals(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithAnnulledStateCanSwitchToClosedState(){
@@ -236,7 +236,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), ClosedState.class);
+        assertEquals(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithAnnulledStateCannotSwitchToSomeState(){
@@ -255,7 +255,7 @@ class SprintStateTest {
         sprint.finish();
         SprintState result = sprint.getState();
 
-        assertSame(result.getClass(), FinishedState.class);
+        assertNotEquals(result.getClass(), FinishedState.class);
     }
     @Test
     void SprintWithReleasedStateCanGetDeploymentBehavior(){
@@ -279,7 +279,7 @@ class SprintStateTest {
         FinishedBehavior result =sprint.getBehavior();
         result.planReview();
 
-        assertSame(result.getClass(), DeploymentReviewBehavior.class);
+        assertEquals(result.getClass(), DeploymentReviewBehavior.class);
     }
     @Test
     void SprintWithAnulledStateFromFinishedStateCanGetNormalBehavior(){
@@ -297,6 +297,6 @@ class SprintStateTest {
         FinishedBehavior result = sprint.getBehavior();
         result.planReview();
 
-        assertSame(result.getClass(), NormalReviewBehavior.class);
+        assertEquals(result.getClass(), NormalReviewBehavior.class);
     }
 }

@@ -4,6 +4,7 @@ package domain;
 import domain.behavior.*;
 import domain.sprint.state.*;
 
+
 import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Sprint {
 
     public Sprint(ZonedDateTime startTime, ZonedDateTime endTime, List<Item> items, Project project){
         setTime(startTime,endTime);
+
         this.items = items;
         this.project = project;
         //New -> Running -> Finished -> Released/ Annulled -> Closed
