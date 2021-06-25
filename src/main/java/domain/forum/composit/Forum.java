@@ -3,10 +3,11 @@ package domain.forum.composit;
 import domain.Project;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Forum {
     private Project project;
-    private ArrayList<Topic> topics = new ArrayList<>();
+    private List<Topic> topics = new ArrayList<>();
 
     public Forum(Project project) {
         this.project = project;
@@ -24,7 +25,7 @@ public class Forum {
     }
 
 
-    public ArrayList<Topic> getTopics() {
+    public List<Topic> getTopics() {
         return topics;
     }
 

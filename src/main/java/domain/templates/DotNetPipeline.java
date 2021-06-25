@@ -1,8 +1,11 @@
 package domain.templates;
 
 import domain.Project;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class DotNetPipeline extends PipelineTemplate {
+    private static final Logger logger = LogManager.getLogger(DotNetPipeline.class);
     private boolean restore;
     public DotNetPipeline(Project project, String link,String name, boolean restore) {
         super(project, link, name);
@@ -21,16 +24,16 @@ public class DotNetPipeline extends PipelineTemplate {
     }
     @Override
     public void build(){
-        System.out.println("Building project.sln");
-        System.out.println("installing dir");
-        System.out.println("------------------------");
+        logger.info("Building project.sln");
+        logger.info("installing dir");
+        logger.info("------------------------");
     }
-    public void restore(){
-        System.out.println("Using NuGet restore");
-        System.out.println("------------------------");
+    private void restore(){
+        logger.info("Using NuGet restore");
+        logger.info("------------------------");
     }
-    public void NGInstall(){
-        System.out.println("Using NuGet installer");
-        System.out.println("------------------------");
+    private void NGInstall(){
+        logger.info("Using NuGet installer");
+        logger.info("------------------------");
     }
 }

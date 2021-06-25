@@ -2,7 +2,11 @@ package domain.templates;
 
 import domain.Project;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class AndroidPipeline extends PipelineTemplate {
+    private static final Logger logger = LogManager.getLogger(AndroidPipeline.class);
     public AndroidPipeline(Project project, String link, String name) {
         super(project, link, name);
     }
@@ -16,11 +20,11 @@ public class AndroidPipeline extends PipelineTemplate {
     }
     @Override
     public void build(){
-        System.out.println("gradlew build");
-        System.out.println("------------------------");
+        logger.info("gradlew build");
+        logger.info("------------------------");
     }
-    public void sign(){
-        System.out.println("Signing and Aligning APK files");
-        System.out.println("------------------------");
+    private void sign(){
+        logger.info("Signing and Aligning APK files");
+        logger.info("------------------------");
     }
 }

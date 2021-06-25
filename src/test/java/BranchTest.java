@@ -8,8 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BranchTest {
 
@@ -35,8 +34,8 @@ class BranchTest {
 
         branch.setCode(code);
 
-        assertTrue(branch.getCode() == code);
-        assertTrue(branch2.getPipelines().get(0) == template);
+        assertSame(branch.getCode(), code);
+        assertSame(branch2.getPipelines().get(0), template);
 
     }
 }

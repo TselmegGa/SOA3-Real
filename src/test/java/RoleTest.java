@@ -3,7 +3,8 @@ import domain.enums.SprintRoles;
 import domain.Role;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 
 class RoleTest {
     @Test
@@ -17,8 +18,8 @@ class RoleTest {
         role.setSprintRole(SprintRoles.NONE);
         role.setSprintRole(SprintRoles.TESTER);
 
-        assertTrue(role.getProjectRole() == ProjectRoles.DEVELOPER);
-        assertTrue(role.getSprintRole() == SprintRoles.TESTER);
+        assertSame(role.getProjectRole(), ProjectRoles.DEVELOPER);
+        assertSame(role.getSprintRole(), SprintRoles.TESTER);
 
     }
 

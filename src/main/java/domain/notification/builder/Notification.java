@@ -1,12 +1,12 @@
 package domain.notification.builder;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Notification {
 
-    private final ArrayList<INotificationProvider> providers;
+    private final List<INotificationProvider> providers;
 
-    public Notification(ArrayList<INotificationProvider> providers) {
+    public Notification(List<INotificationProvider> providers) {
         this.providers = providers;
     }
 

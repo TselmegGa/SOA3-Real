@@ -3,8 +3,11 @@ package domain;
 import domain.notification.builder.Notification;
 import domain.notification.observer.Message;
 import domain.notification.observer.NotificationObserver;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class User extends NotificationObserver {
+    private static final Logger logger = LogManager.getLogger(User.class);
     private String Name;
     private Role role;
     private int age;
@@ -62,7 +65,7 @@ public class User extends NotificationObserver {
         if(this.notification!=null){
             this.notification.send(message.getSubject(), message.getMessage());
         }else {
-            System.out.println("onNotification: notification object is null,  Message { Subject: " +  message.getSubject()+ ", Message: " + message.getMessage()+ "} User: " + this.toString());
+            logger.info("onNotification: notification object is null,  Message { Subject: " +  message.getSubject()+ ", Message: " + message.getMessage()+ "} User: " + this.toString());
         }
     }
 

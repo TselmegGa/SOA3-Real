@@ -4,23 +4,24 @@ package domain;
 import domain.item.state.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Item {
 
-    public DoingState doingState;
-    public ReadyForTestingState readyForTestingState;
-    public DoneState doneState;
-    public TodoState todoState;
-    public TestingState testingState;
+    private DoingState doingState;
+    private ReadyForTestingState readyForTestingState;
+    private DoneState doneState;
+    private TodoState todoState;
+    private TestingState testingState;
     private IPhaseState state;
-    private ArrayList<Activity> activities;
+    private List<Activity> activities;
     private User user;
     private int value;
     private String title;
     private String description;
     private Project project;
 
-    public Item(ArrayList<Activity> activities, int value, String title, String description, Project project) {
+    public Item(List<Activity> activities, int value, String title, String description, Project project) {
         this.project = project;
         this.title = title;
         this.description = description;
@@ -33,7 +34,7 @@ public class Item {
         this.value = value;
         state = todoState;
     }
-    public Item(ArrayList<Activity> activities, int value, Project project, String title) {
+    public Item(List<Activity> activities, int value, Project project, String title) {
         this(activities,value,title,null,project);
     }
     public Item(int value, Project project, String title) {
@@ -56,7 +57,7 @@ public class Item {
         return state.todo();
     }
 
-    public ArrayList<Activity> getActivities() {
+    public List<Activity> getActivities() {
         return activities;
     }
     public User getUser() {
@@ -76,6 +77,21 @@ public class Item {
     }
     public int getValue() {
         return value;
+    }
+    public DoingState getDoingState() {
+        return doingState;
+    }
+    public ReadyForTestingState getReadyForTestingState() {
+        return readyForTestingState;
+    }
+    public DoneState getDoneState() {
+        return doneState;
+    }
+    public TodoState getTodoState() {
+        return todoState;
+    }
+    public TestingState getTestingState() {
+        return testingState;
     }
 
     public boolean setUser(User user){

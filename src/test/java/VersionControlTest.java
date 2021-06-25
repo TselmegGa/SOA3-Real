@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class VersionControlTest {
@@ -18,6 +19,6 @@ class VersionControlTest {
         versionControl.setBranches(list);
 
 
-        assertTrue(versionControl.getBranches().get(0) == branch);
+        assertSame(versionControl.getBranches().get(0), branch);
     }
 }

@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ItemStateTest {
     //Testcase 7 Backlog Item states
@@ -26,7 +25,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     @Test
     void itemWithoutUserOrActivitiesCannotSwitchToDoingState(){
@@ -39,7 +38,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     @Test
     void itemWithTodoStateCannotSwitchToReadyForTestingState(){
@@ -59,7 +58,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == ReadyForTestingState.class);
+        assertSame(state.getClass(), ReadyForTestingState.class);
     }
     @Test
     void itemWithTodoStateCannotSwitchToToDoState(){
@@ -93,7 +92,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == TestingState.class);
+        assertSame(state.getClass(), TestingState.class);
     }
     @Test
     void itemWithTodoStateCannotSwitchToDoneState(){
@@ -109,7 +108,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     //Doing stat
     @Test
@@ -126,7 +125,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == TodoState.class);
+        assertSame(state.getClass(), TodoState.class);
     }
     @Test
     void itemWithDoingStateCannotSwitchToDoingState(){
@@ -142,7 +141,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == TodoState.class);
+        assertSame(state.getClass(), TodoState.class);
     }
     @Test
     void itemWithDoingCannotSwitchToReadyForTestingState(){
@@ -160,7 +159,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == ReadyForTestingState.class);
+        assertSame(state.getClass(), ReadyForTestingState.class);
     }
     @Test
     void itemWithDoingStateCannotSwitchToTestingState(){
@@ -176,7 +175,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == TestingState.class);
+        assertSame(state.getClass(), TestingState.class);
     }
     @Test
     void itemWithDoingStateCannotSwitchToDoneState(){
@@ -192,7 +191,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoneState.class);
+        assertSame(state.getClass(), DoneState.class);
     }
     //Ready For Testing State
     @Test
@@ -210,7 +209,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == TodoState.class);
+        assertSame(state.getClass(), TodoState.class);
     }
 
 
@@ -229,7 +228,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     @Test
     void itemWithReadyForTestingStateCannotSwitchToReadyForTestingState(){
@@ -261,7 +260,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == TestingState.class);
+        assertSame(state.getClass(), TestingState.class);
     }
     @Test
     void itemWithReadyForTestingStateCannotSwitchToDoneState(){
@@ -278,7 +277,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoneState.class);
+        assertSame(state.getClass(), DoneState.class);
     }
     //Testing State
     @Test
@@ -297,7 +296,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == TodoState.class);
+        assertSame(state.getClass(), TodoState.class);
     }
     @Test
     void itemWithTestingStateCannotSwitchToDoingState(){
@@ -315,7 +314,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     @Test
     void itemWithTestingStateCannotSwitchToReadyForTestingState(){
@@ -333,7 +332,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == ReadyForTestingState.class);
+        assertSame(state.getClass(), ReadyForTestingState.class);
     }
     @Test
     void itemWithTestingStateCannotSwitchToTestingState(){
@@ -369,7 +368,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == DoneState.class);
+        assertSame(state.getClass(), DoneState.class);
     }
     //Done State
     @Test
@@ -389,7 +388,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == TodoState.class);
+        assertSame(state.getClass(), TodoState.class);
     }
     @Test
     void itemWithDoneStateCannotSwitchToDoingState(){
@@ -408,7 +407,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == DoingState.class);
+        assertSame(state.getClass(), DoingState.class);
     }
     @Test
     void itemWithDoneStateCanSwitchToReadyForTestingState(){
@@ -427,7 +426,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertTrue(result);
-        assertTrue(state.getClass() == ReadyForTestingState.class);
+        assertSame(state.getClass(), ReadyForTestingState.class);
     }
     @Test
     void itemWithDoneStateCannotSwitchToTestingState(){
@@ -446,7 +445,7 @@ class ItemStateTest {
         IPhaseState state =  item.getState();
         //arrange
         assertFalse(result);
-        assertFalse(state.getClass() == TestingState.class);
+        assertSame(state.getClass(), TestingState.class);
     }
     @Test
     void itemWithDoneStateCannotSwitchToDoneState(){

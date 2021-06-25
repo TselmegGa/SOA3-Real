@@ -1,8 +1,7 @@
 import domain.*;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BacklogTest {
     @Test
@@ -13,7 +12,7 @@ class BacklogTest {
         boolean result = backlog.addItem(item);
 
         assertTrue(result);
-        assertTrue(backlog.getItems().get(backlog.getItems().size()-1) == item);
+        assertSame(backlog.getItems().get(backlog.getItems().size()-1), item);
     }
     @Test
     void addingFaultyItemToBacklogShouldFail(){

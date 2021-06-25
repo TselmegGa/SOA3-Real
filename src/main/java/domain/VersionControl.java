@@ -1,11 +1,12 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VersionControl {
-    private ArrayList<Branch> branches;
+    private List<Branch> branches;
 
-    public ArrayList<Branch> getBranches() {
+    public List<Branch> getBranches() {
         return branches;
     }
 

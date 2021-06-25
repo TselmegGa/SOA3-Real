@@ -3,20 +3,24 @@ package domain;
 import domain.enums.ProjectRoles;
 import domain.enums.SprintRoles;
 import domain.forum.composit.Forum;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Project {
+    private static final Logger logger = LogManager.getLogger(Project.class);
     private String name;
-    private ArrayList<Sprint> sprints;
+    private List<Sprint> sprints;
     private Backlog backlog;
     private User[] users = new User[]{};
     private VersionControl versionControl;
     private Forum forum;
 
-    public Project(ArrayList<Sprint> sprints, VersionControl vc, Backlog backlog, String name){
+    public Project(List<Sprint> sprints, VersionControl vc, Backlog backlog, String name){
         this.versionControl = vc;
         this.sprints = sprints;
         this.backlog = backlog;
@@ -50,7 +54,7 @@ public class Project {
     public VersionControl getVersionControl() {
         return versionControl;
     }
-    public ArrayList<Sprint> getSprints(){
+    public List<Sprint> getSprints(){
         return sprints;
     }
     public Backlog getBacklog() {
@@ -68,8 +72,8 @@ public class Project {
             this.sprints.add(sprint);
         }
         else{
-            System.out.println("A Sprint is currently active");
-            System.out.println("Please close the sprint first");
+            logger.info("A Sprint is currently active");
+            logger.info("Please close the sprint first");
         }
     }
     public void setName(String name) {

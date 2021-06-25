@@ -1,8 +1,11 @@
 package domain.sprint.state;
 
 import domain.Sprint;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class RunningState extends SprintState {
+    private static final Logger logger = LogManager.getLogger(RunningState.class);
     private Sprint sprint;
     public RunningState(Sprint sprint) {
         this.sprint = sprint;
@@ -10,7 +13,7 @@ public class RunningState extends SprintState {
 
     @Override
     public void annulled() {
-        System.out.println("The sprint cannot be annulled while running");
+        logger.info("The sprint cannot be annulled while running");
     }
 
 
@@ -18,7 +21,7 @@ public class RunningState extends SprintState {
     @Override
     public void finished() {
         sprint.setState(sprint.finishedState);
-        System.out.println("The sprint has been finished");
+        logger.info("The sprint has been finished");
     }
 
 }

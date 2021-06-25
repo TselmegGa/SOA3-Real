@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SprintTest {
+class SprintTest {
     @Test
     void sprintTest(){
         Project project = new Project();
@@ -33,9 +33,9 @@ public class SprintTest {
 
         String result = sprint.getRapport().getRapport();
 
-        assertTrue(sprint.getSummery() == "Sprint went well");
-        assertTrue(result.equals(rapport.getRapport()));
-        assertTrue(sprint.getItems().get(0) ==item);
+        assertSame(sprint.getSummery(), "Sprint went well");
+        assertSame(result ,rapport.getRapport());
+        assertSame(sprint.getItems().get(0), item);
     }
     @Test
     void sprintRunningTest() {

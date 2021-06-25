@@ -4,7 +4,7 @@ import domain.Role;
 import domain.User;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 class UserTest {
     @Test
@@ -22,10 +22,10 @@ class UserTest {
         user.setEmail("Mike@live.com");
         user.setAge(45);
 
-        assertTrue(user.getRole()== role);
-        assertTrue(user.getAge()== 45);
-        assertTrue(user.getEmail()== "Mike@live.com");
-        assertTrue(user.getName()== "Mike John");
+        assertSame(user.getRole(), role);
+        assertSame(user.getAge(), 45);
+        assertSame(user.getEmail(), "Mike@live.com");
+        assertSame(user.getName(), "Mike John");
 
     }
 }

@@ -1,11 +1,12 @@
 package domain.notification.observer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 // een standaard implementatie van NotificationSubject
 // Dit omdat we het op meerdere plekken gaan gebruiken en het niet logish is om telkens dezelfde implementie opnieuw te schrijven.
 public class BasicNotificationSubject implements NotificationSubject {
-    private ArrayList<NotificationObserver> listeners = new ArrayList<NotificationObserver>();
+    private List<NotificationObserver> listeners = new ArrayList<NotificationObserver>();
 
     @Override
     public void registerNotificationObserver(NotificationObserver notificationObserver) {

@@ -6,6 +6,7 @@ import domain.notification.observer.Message;
 import domain.User;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Topic extends BasicNotificationSubject {
 
@@ -14,9 +15,9 @@ public class Topic extends BasicNotificationSubject {
     private String content;
     private Item item;
 
-    private ArrayList<Reaction> reactions;
+    private List<Reaction> reactions;
 
-    public Topic(User start, Item item, String title, String content, ArrayList<Reaction> reactions) {
+    public Topic(User start, Item item, String title, String content, List<Reaction> reactions) {
         this.start = start;
         this.item = item;
         this.title = title;
@@ -51,7 +52,7 @@ public class Topic extends BasicNotificationSubject {
         return item;
     }
 
-    public ArrayList<Reaction> getReactions() {
+    public List<Reaction> getReactions() {
         return reactions;
     }
 

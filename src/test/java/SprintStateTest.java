@@ -10,8 +10,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SprintStateTest {
     @Test
@@ -27,7 +26,7 @@ class SprintStateTest {
         sprint.run();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == RunningState.class);
+        assertSame(result.getClass() , RunningState.class);
     }
     @Test
     void SprintWithNewSprintStateCanSwitchToAnnulledState(){
@@ -42,7 +41,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == AnnulledState.class);
+        assertSame(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithNewSprintStateCannotSwitchToSomeState(){
@@ -57,7 +56,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == ClosedState.class);
+        assertSame(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithRunningStateCannotSwitchToAnnulledState(){
@@ -73,7 +72,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == AnnulledState.class);
+        assertSame(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithRunningStateCanSwitchToFinishedState(){
@@ -89,7 +88,7 @@ class SprintStateTest {
         sprint.finish();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == FinishedState.class);
+        assertSame(result.getClass(), FinishedState.class);
     }
     @Test
     void SprintWithRunningStateCannotSwitchToSomeState(){
@@ -106,7 +105,7 @@ class SprintStateTest {
         sprint.release();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == ReleasedState.class);
+        assertSame(result.getClass(), ReleasedState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToReleasedState(){
@@ -129,7 +128,7 @@ class SprintStateTest {
         sprint.release();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == ReleasedState.class);
+        assertSame(result.getClass(), ReleasedState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToAnnulledState(){
@@ -152,7 +151,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == AnnulledState.class);
+        assertSame(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithFinishedStateCanSwitchToSomeState(){
@@ -170,7 +169,7 @@ class SprintStateTest {
         sprint.run();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == RunningState.class);
+        assertSame(result.getClass(), RunningState.class);
     }
     @Test
     void SprintWithReleasedStateCanSwitchToClosedState(){
@@ -194,7 +193,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == ClosedState.class);
+        assertSame(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithReleasedStateCannotSwitchToSomeState(){
@@ -219,7 +218,7 @@ class SprintStateTest {
         sprint.annul();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == AnnulledState.class);
+        assertSame(result.getClass(), AnnulledState.class);
     }
     @Test
     void SprintWithAnnulledStateCanSwitchToClosedState(){
@@ -237,7 +236,7 @@ class SprintStateTest {
         sprint.close();
         SprintState result = sprint.getState();
 
-        assertTrue(result.getClass() == ClosedState.class);
+        assertSame(result.getClass(), ClosedState.class);
     }
     @Test
     void SprintWithAnnulledStateCannotSwitchToSomeState(){
@@ -256,7 +255,7 @@ class SprintStateTest {
         sprint.finish();
         SprintState result = sprint.getState();
 
-        assertFalse(result.getClass() == FinishedState.class);
+        assertSame(result.getClass(), FinishedState.class);
     }
     @Test
     void SprintWithReleasedStateCanGetDeploymentBehavior(){
@@ -280,7 +279,7 @@ class SprintStateTest {
         FinishedBehavior result =sprint.getBehavior();
         result.planReview();
 
-        assertTrue(result.getClass() == DeploymentReviewBehavior.class);
+        assertSame(result.getClass(), DeploymentReviewBehavior.class);
     }
     @Test
     void SprintWithAnulledStateFromFinishedStateCanGetNormalBehavior(){
@@ -298,6 +297,6 @@ class SprintStateTest {
         FinishedBehavior result = sprint.getBehavior();
         result.planReview();
 
-        assertTrue(result.getClass() == NormalReviewBehavior.class);
+        assertSame(result.getClass(), NormalReviewBehavior.class);
     }
 }

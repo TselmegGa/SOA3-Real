@@ -7,6 +7,7 @@ import domain.sprint.state.*;
 import java.time.Instant;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sprint {
 
@@ -20,14 +21,14 @@ public class Sprint {
     public RunningState runningState;
     private FinishedBehavior behavior;
     private SprintState state;
-    private ArrayList<Item> items;
+    private List<Item> items;
     private Rapport rapport;
     private String summery;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
     private Project project;
 
-    public Sprint(ZonedDateTime startTime, ZonedDateTime endTime, ArrayList<Item> items, Project project){
+    public Sprint(ZonedDateTime startTime, ZonedDateTime endTime, List<Item> items, Project project){
         setTime(startTime,endTime);
         this.items = items;
         this.project = project;
@@ -79,7 +80,7 @@ public class Sprint {
     public String getSummery() {
         return summery;
     }
-    public ArrayList<Item> getItems(){
+    public List<Item> getItems(){
         return items;
     }
     public SprintState getState(){

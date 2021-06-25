@@ -1,8 +1,11 @@
 package domain.templates;
 
 import domain.Project;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class NodeJSPipeline extends PipelineTemplate {
+    private static final Logger logger = LogManager.getLogger(NodeJSPipeline.class);
     private String path;
     private boolean pathIncl;
     public NodeJSPipeline(Project project, String link,String name, String path) {
@@ -18,15 +21,15 @@ public class NodeJSPipeline extends PipelineTemplate {
     }
     @Override
     public void build(){
-        System.out.println("Run npm install");
-        System.out.println("installing nodejs");
-        System.out.println("------------------------");
+        logger.info("Run npm install");
+        logger.info("installing nodejs");
+        logger.info("------------------------");
 //        if(true){
             this.failed("NPM Install failed!");
 //        }
     }
-    public void copyPath(){
-        System.out.println("Copying files to " + path);
-        System.out.println("------------------------");
+    private void copyPath(){
+        logger.info("Copying files to " + path);
+        logger.info("------------------------");
     }
 }

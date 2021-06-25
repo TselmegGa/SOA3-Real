@@ -1,6 +1,10 @@
 package domain.sprint.state;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public abstract class SprintState {
+    private static final Logger logger = LogManager.getLogger(SprintState.class);
 
     public void annulled(){
         invalid();
@@ -18,6 +22,6 @@ public abstract class SprintState {
         invalid();
     }
     private void invalid(){
-        System.out.println("The sprint cannot be set to this state");
+        logger.info("The sprint cannot be set to this state");
     }
 }

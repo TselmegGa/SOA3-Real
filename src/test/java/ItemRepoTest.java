@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 import static org.mockito.Mockito.when;
 
 class ItemRepoTest {
@@ -30,7 +31,7 @@ class ItemRepoTest {
         Iterable<Item> result = repo.getAll();
 
         //assert
-        assertTrue(result == list);
+        assertSame(result, list);
     }
     @Test
     @ExtendWith(MockitoExtension.class)
@@ -44,7 +45,7 @@ class ItemRepoTest {
         Item result = repo.get(1);
 
         //assert
-        assertTrue(result == item);
+        assertSame(result, item);
     }
     @Test
     @ExtendWith(MockitoExtension.class)
@@ -57,7 +58,7 @@ class ItemRepoTest {
 
         Item result = repo.add(item);
         //assert
-        assertTrue(result == item);
+        assertSame(result, item);
     }
     @Test
     @ExtendWith(MockitoExtension.class)
@@ -70,7 +71,7 @@ class ItemRepoTest {
 
         Item result = repo.add(item);
         //assert
-        assertTrue(result == item);
+        assertSame(result, item);
     }
     @Test
     @ExtendWith(MockitoExtension.class)
@@ -86,7 +87,7 @@ class ItemRepoTest {
         repo.delete(item);
         Item result2 = repo.get(1);
         //assert
-        assertTrue(result == item);
-        assertTrue(result2 == null);
+        assertSame(result, item);
+        assertSame(result2, null);
     }
 }

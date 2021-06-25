@@ -3,8 +3,11 @@ package domain.templates;
 import domain.notification.observer.BasicNotificationSubject;
 import domain.notification.observer.Message;
 import domain.Project;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public abstract class PipelineTemplate extends BasicNotificationSubject {
+    private static final Logger logger = LogManager.getLogger(PipelineTemplate.class);
     private Project project;
     private String name;
     private String link;
@@ -23,12 +26,12 @@ public abstract class PipelineTemplate extends BasicNotificationSubject {
 
     public abstract void build();
     public void test(){
-        System.out.println("Testing given tests");
-        System.out.println("------------------------");
+        logger.info("Testing given tests");
+        logger.info("------------------------");
     }
     public void publish(){
-        System.out.println("Publishing to " + link);
-        System.out.println("------------------------");
+        logger.info("Publishing to " + link);
+        logger.info("------------------------");
     }
 
     public void failed(String error){

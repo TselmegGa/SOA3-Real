@@ -1,8 +1,11 @@
 package domain.item.state;
 
 import domain.Item;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class TodoState implements IPhaseState {
+    private static final Logger logger = LogManager.getLogger(TodoState.class);
     private Item item;
     public TodoState(Item item) {
         this.item = item;
@@ -10,38 +13,38 @@ public class TodoState implements IPhaseState {
 
     @Override
     public boolean todo() {
-        System.out.println("Currently in to do phase");
+        logger.info("Currently in to do phase");
         return false;
     }
 
     @Override
     public boolean doing() {
         if(item.hasUser() || item.hasActivities()){
-            item.setState(item.doingState);
-            System.out.println("The item has been moved to Doing phase");
+            item.setState(item.getDoingState());
+            logger.info("The item has been moved to Doing phase");
             return true;
         }
         else{
-            System.out.println("Need user or activities");
+            logger.info("Need user or activities");
             return false;
         }
     }
 
     @Override
     public boolean readyForTesting() {
-        System.out.println("Must be worked on first");
+        logger.info("Must be worked on first");
         return false;
     }
 
     @Override
     public boolean testing() {
-        System.out.println("Must be worked on first");
+        logger.info("Must be worked on first");
         return false;
     }
 
     @Override
     public boolean done() {
-        System.out.println("Must be worked on first");
+        logger.info("Must be worked on first");
         return false;
     }
 }

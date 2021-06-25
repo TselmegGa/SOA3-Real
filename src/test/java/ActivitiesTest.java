@@ -2,7 +2,8 @@ import domain.Activity;
 import domain.User;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertSame;
+
 
 class ActivitiesTest {
     @Test
@@ -16,8 +17,8 @@ class ActivitiesTest {
         activity.setUser(mike);
 
 
-        assertTrue(activity.getDescription() == "Home page - Footer");
-        assertTrue(activity.getValue() == 7);
-        assertTrue(activity.getUser() == mike);
+        assertSame(activity.getDescription(), "Home page - Footer");
+        assertSame(activity.getValue(), 7);
+        assertSame(activity.getUser(), mike);
     }
 }
