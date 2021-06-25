@@ -24,6 +24,8 @@ class BranchTest {
         list.add(template);
         Branch branch2 = new Branch(code ,"Home page",list);
         branch.setPipelines(new ArrayList<>());
+        template.setName("Good times Pipeline");
+        branch.setName("About page");
 
         branch.addPipelines(template);
         branch.addPipelines(template2);
@@ -34,8 +36,10 @@ class BranchTest {
 
         branch.setCode(code);
 
-        assertEquals(branch.getCode(), code);
-        assertEquals(branch2.getPipelines().get(0), template);
+        assertEquals(code, branch.getCode());
+        assertEquals(template, branch2.getPipelines().get(0));
+        assertEquals("About page", branch.getName());
+        assertEquals("Good times Pipeline", branch2.getPipelines().get(0).getName());
 
     }
 }

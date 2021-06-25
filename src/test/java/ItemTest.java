@@ -23,11 +23,14 @@ class ItemTest {
         Item item = new Item(5, project, "Items Page");
 
         //act
-
+        item.setTitle("Sales page");
+        item.setDescription("Sales page will include every sales made");
         item.setValue(7);
         item.setActivities(activities);
         //assert
         assertEquals(activities, item.getActivities());
+        assertEquals("Sales page", item.getTitle());
+        assertEquals("Sales page will include every sales made", item.getDescription());
         assertEquals(7, item.getValue());
     }
     @Test

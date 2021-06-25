@@ -52,6 +52,7 @@ class ProjectTest {
         Backlog backlog = new Backlog();
 
         Project project = new Project(sprints,vc,backlog, "MoneyMan Project");
+        project.setName("Money Man");
         Forum forum = new Forum(project);
         project.addSprint(sprint);
         project.setForum(forum);
