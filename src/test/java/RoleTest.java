@@ -1,11 +1,7 @@
-import Domain.Branch;
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.Role;
-import Domain.VersionControl;
+import domain.enums.ProjectRoles;
+import domain.enums.SprintRoles;
+import domain.Role;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

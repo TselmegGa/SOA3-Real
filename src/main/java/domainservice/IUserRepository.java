@@ -1,0 +1,6 @@
+package domainservice;
+
+import domain.Sprint;
+
+public interface IUserRepository extends IRepository<Sprint>{
+}

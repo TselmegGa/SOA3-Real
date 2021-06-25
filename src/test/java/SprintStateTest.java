@@ -1,8 +1,9 @@
-import Domain.*;
-import Domain.Behavior.DeploymentReviewBehavior;
-import Domain.Behavior.FinishedBehavior;
-import Domain.Behavior.NormalReviewBehavior;
-import Domain.SprintState.*;
+import domain.*;
+import domain.behavior.DeploymentReviewBehavior;
+import domain.behavior.FinishedBehavior;
+import domain.behavior.NormalReviewBehavior;
+import domain.SprintState.*;
+import domain.sprint.state.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

@@ -1,10 +1,7 @@
-import Domain.Backlog;
-import Domain.Branch;
-import Domain.Item;
-import Domain.VersionControl;
+import domain.Branch;
+import domain.VersionControl;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

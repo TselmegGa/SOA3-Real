@@ -1,7 +1,5 @@
-import Domain.Activity;
-import Domain.Backlog;
-import Domain.Item;
-import Domain.User;
+import domain.Activity;
+import domain.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

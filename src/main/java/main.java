@@ -1,15 +1,14 @@
-import Domain.*;
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.ForumComposit.Reaction;
-import Domain.ForumComposit.Topic;
-import Domain.NotificationBuilder.NotificationBuilder;
-import Domain.NotificationBuilder.Providers.DiscordProvider;
-import Domain.NotificationBuilder.Providers.MailProvider;
-import Domain.NotificationObserver.Message;
-import Domain.Templates.DotNetPipeline;
-import Domain.Templates.NodeJSPipeline;
-import Domain.Templates.PipelineTemplate;
+import domain.*;
+import domain.enums.ProjectRoles;
+import domain.enums.SprintRoles;
+import domain.forum.composit.Reaction;
+import domain.forum.composit.Topic;
+import domain.notification.builder.NotificationBuilder;
+import domain.notification.builder.Providers.MailProvider;
+import domain.notification.observer.Message;
+import domain.templates.DotNetPipeline;
+import domain.templates.NodeJSPipeline;
+import domain.templates.PipelineTemplate;
 
 import java.time.Instant;
 import java.time.ZoneId;

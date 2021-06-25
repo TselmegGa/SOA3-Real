@@ -1,6 +1,4 @@
-import Domain.*;
-import Domain.Behavior.FinishedBehavior;
-import Domain.SprintState.SprintState;
+import domain.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

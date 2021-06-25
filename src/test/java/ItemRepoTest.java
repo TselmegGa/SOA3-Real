@@ -1,8 +1,6 @@
-import Domain.Activity;
-import Domain.Item;
-import Domain.Project;
-import Domain.User;
-import Infrastructure.ItemRepository;
+import domain.Item;
+import domain.Project;
+import infrastructure.ItemRepository;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;

@@ -1,12 +1,11 @@
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.ForumComposit.Forum;
-import Domain.ForumComposit.Reaction;
-import Domain.ForumComposit.Topic;
-import Domain.Item;
-import Domain.Project;
-import Domain.Role;
-import Domain.User;
+import domain.enums.ProjectRoles;
+import domain.enums.SprintRoles;
+import domain.forum.composit.Reaction;
+import domain.forum.composit.Topic;
+import domain.Item;
+import domain.Project;
+import domain.Role;
+import domain.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,12 +1,8 @@
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.NotificationBuilder.INotificationProvider;
-import Domain.NotificationBuilder.Notification;
-import Domain.NotificationBuilder.NotificationBuilder;
-import Domain.NotificationBuilder.Providers.DiscordProvider;
-import Domain.NotificationBuilder.Providers.MailProvider;
-import Domain.Role;
-import Domain.User;
+import domain.notification.builder.INotificationProvider;
+import domain.notification.builder.Notification;
+import domain.notification.builder.NotificationBuilder;
+import domain.notification.builder.Providers.DiscordProvider;
+import domain.notification.builder.Providers.MailProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

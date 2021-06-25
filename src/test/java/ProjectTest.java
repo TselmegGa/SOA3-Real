@@ -1,7 +1,5 @@
-import Domain.*;
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.ForumComposit.Forum;
+import domain.*;
+import domain.forum.composit.Forum;
 import org.junit.jupiter.api.Test;
 
 import java.time.Instant;

@@ -1,7 +1,8 @@
-import Domain.*;
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.State.*;
+import domain.*;
+import domain.enums.ProjectRoles;
+import domain.enums.SprintRoles;
+import domain.State.*;
+import domain.item.state.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

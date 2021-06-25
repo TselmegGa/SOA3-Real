@@ -1,7 +1,7 @@
-import Domain.Enum.ProjectRoles;
-import Domain.Enum.SprintRoles;
-import Domain.Role;
-import Domain.User;
+import domain.enums.ProjectRoles;
+import domain.enums.SprintRoles;
+import domain.Role;
+import domain.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

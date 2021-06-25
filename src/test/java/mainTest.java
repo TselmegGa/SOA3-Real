@@ -1,7 +1,5 @@
-import Domain.Project;
-import Domain.Role;
-import Domain.Sprint;
-import Domain.User;
+import domain.Project;
+import domain.User;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

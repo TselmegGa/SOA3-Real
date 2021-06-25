@@ -1,9 +1,7 @@
-import Domain.Activity;
-import static org.mockito.Mockito.when;
-import Domain.Item;
-import Domain.Project;
-import Domain.User;
-import Infrastructure.ItemRepository;
+import domain.Activity;
+import domain.Item;
+import domain.Project;
+import domain.User;
 import org.junit.jupiter.api.Test;
 
 

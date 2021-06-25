@@ -1,9 +1,9 @@
-import Domain.Branch;
-import Domain.Project;
-import Domain.Templates.AndroidPipeline;
-import Domain.Templates.DotNetPipeline;
-import Domain.Templates.NodeJSPipeline;
-import Domain.Templates.PipelineTemplate;
+import domain.Branch;
+import domain.Project;
+import domain.templates.AndroidPipeline;
+import domain.templates.DotNetPipeline;
+import domain.templates.NodeJSPipeline;
+import domain.templates.PipelineTemplate;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
