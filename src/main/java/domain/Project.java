@@ -70,6 +70,7 @@ public class Project {
     public void addSprint(Sprint sprint){
         if(noSprintRunning()){
             this.sprints.add(sprint);
+            sprint.setProject(this);
         }
         else{
             logger.info("A Sprint is currently active");

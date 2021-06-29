@@ -19,9 +19,11 @@ public class BasicNotificationSubject implements NotificationSubject {
     @Override
     public void registerNotificationObserver(NotificationObserver[] notificationObserver) {
         //Voor kom duplicateds
-        for (var i = 0; i < notificationObserver.length; i++) {
-            if(!this.listeners.contains(notificationObserver[i])){
-                listeners.add(notificationObserver[i]);
+        if(notificationObserver!=null){
+            for (var i = 0; i < notificationObserver.length; i++) {
+                if(!this.listeners.contains(notificationObserver[i])){
+                    listeners.add(notificationObserver[i]);
+                }
             }
         }
     }
